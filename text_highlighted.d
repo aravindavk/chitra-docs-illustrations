@@ -11,6 +11,7 @@ void main()
     with (ctx)
     {
         background(255);  // White background
+        border(1);
         noStroke;
 
         font("Inter", 50);

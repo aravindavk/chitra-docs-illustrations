@@ -38,10 +38,10 @@ void main()
         // Headings
         font("Inter", 20);
         textAlign(CENTER);
-        text("LEFT", shift(gridCell(1), dy: -40));
-        text("CENTER", shift(gridCell(2), dy: -40));
-        text("RIGHT", shift(gridCell(3), dy: -40));
-        text("JUSTIFY", shift(gridCell(4), dy: -40));
+        text("LEFT", gridCell(1).shift(dy: -40));
+        text("CENTER", gridCell(2).shift(dy: -40));
+        text("RIGHT", gridCell(3).shift(dy: -40));
+        text("JUSTIFY", gridCell(4).shift(dy: -40));
 
         saveAs("output/text-align.png", resolution: 72);
     }

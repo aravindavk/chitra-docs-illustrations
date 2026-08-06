@@ -4,11 +4,10 @@
 
 import std.stdio;
 import chitra;
-import utils;
 
 void main()
 {
-    auto ctx = new Chitra(400);
+    auto ctx = new Chitra(400, 200);
     with (ctx)
     {
         background(255);  // White background
@@ -16,7 +15,9 @@ void main()
 
         grid(3, 2, gap: 20);
 
-        showGridLines(ctx, 3, 2);
+        lineDash(4);
+        stroke("#00B9F0");
+        gridOutlines;
 
         saveAs("output/grid-gap.png", resolution: 72);
     }

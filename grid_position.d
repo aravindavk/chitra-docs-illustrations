@@ -4,7 +4,6 @@
 
 import std.stdio;
 import chitra;
-import utils;
 
 void main()
 {
@@ -19,7 +18,9 @@ void main()
         //       X    Y    W    H
         gridSize(130, 130, 240, 240);
 
-        showGridLines(ctx, 3, 2);
+        lineDash(4);
+        stroke("#00B9F0");
+        gridOutlines;
 
         saveAs("output/grid-position.png", resolution: 72);
     }

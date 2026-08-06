@@ -4,24 +4,30 @@
 
 import std.stdio;
 import chitra;
-import utils;
 
 void main()
 {
-    auto ctx = new Chitra(400);
+    auto ctx = new Chitra(400, 200);
     with (ctx)
     {
         background(255);  // White background
         border(1);
 
         grid(2, 2, gap: 20);
-        showGridLines(ctx, 2, 2);
-
         auto box2 = gridCell(2);
 
         grid("sub", 7, 1);
         gridSize("sub", box2.x, box2.y, box2.width, box2.height);
-        showGridLines(ctx, 7, 1, name: "sub");
+
+        lineDash(4);
+
+        // Default grid outline
+        stroke("#00B9F0");
+        gridOutlines;
+
+        // Sub grid outline
+        stroke("black");
+        gridOutlines("sub");
 
         auto colors = [
             "#9400D3",   // Violet
@@ -33,10 +39,11 @@ void main()
             "#FF0000"    // Red
             ];
 
+        noStroke;
         foreach(i; 0 .. 7)
         {
             fill(colors[i]);
-            rect(gridCell("sub", i + 1));
+            rect(gridCell("sub", i + 1).inset(4, 4));
         }
 
         saveAs("output/named-grid.png", resolution: 72);

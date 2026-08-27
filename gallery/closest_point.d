@@ -1,5 +1,5 @@
 /+ dub.sdl:
- dependency "chitra" path="../chitra-d"
+ dependency "chitra" path="../../chitra-d"
  +/
 
 import std.stdio;
